@@ -1,15 +1,13 @@
 const kafka = require('kafka-node');
 const Producer = kafka.Producer;
-const client = new kafka.KafkaClient({ kafkaHost: 'localhost:9092' });
+const client = new kafka.KafkaClient({ kafkaHost: 'your-host' });
 const producer = new Producer(client);
 
 producer.on('ready', () => {
     console.log('Producer is ready');
     for (let i = 0; i < 1; i++) {
-        const message = {
-            id:'ea9850a5-f6c5-4cfa-a508-6b0ec097f089',
-            serial_number:'SN_BAA_472662'
-        }
+        // set your message
+        const message = {}
 
         const payloads = [
             {
